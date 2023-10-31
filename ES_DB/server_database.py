@@ -18,7 +18,7 @@ def shortcut_list(command):
     cur=con.cursor()
     res=cur.execute(f"SELECT Mov_Sequence FROM Movements WHERE Shortcut='{command.upper()}'")
     lista=res.fetchall()
-    stringa= f"{lista[0]}"
+    stringa= f"{lista[0][0]}"
     comandi=stringa.split(",")
     con.close()
     return comandi
